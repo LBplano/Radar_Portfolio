@@ -1,0 +1,11 @@
+# Ignore Mac System files
+.DS_Store
+
+# Ignore specific massive data files (Use your ACTUAL file names here)
+slc1.dat
+slc2.dat
+
+# SAFETY NET: Ignore ANY file ending in .dat or .bin
+*.dat
+*.bin
+*.raw
