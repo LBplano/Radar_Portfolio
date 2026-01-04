@@ -6,9 +6,9 @@ import time
 #Part (a)
 width = 6144    #Range samples
 lines = 12000   #Azimuth lines
-home = os.path.expanduser("~") 
-filename1 = os.path.join(home, "Downloads", "slc1.dat")
-filename2 = os.path.join(home, "Downloads", "slc2.dat")
+script_location = os.path.dirname(os.path.abspath(__file__))
+filename1 = os.path.join(script_location, "slc1.dat")
+filename2 = os.path.join(script_location, "slc2.dat")
 #Load and reshape slc1.dat
 raw_data1 = np.fromfile(filename1, dtype=np.complex64)
 slc1 = raw_data1.reshape((lines, width))
@@ -57,7 +57,7 @@ plt.ylabel('Azimuth (Lines)')
 plt.show()
 
 #Part (b)
-dem = os.path.join(home, "Downloads", "slc.dem" )
+dem = os.path.join(script_location, "slc.dem")
 #Confirm whether to process the data as the 
 #4 byte float32 data type or the 8 byte float64 data type
 dem_file_size = os.path.getsize(dem)
@@ -117,8 +117,7 @@ y_flat = sin_flat
 #Flat earth, unit vector = (y_flat, z_flat)
 
 #Part (d)
-home = os.path.expanduser("~")
-baseline_path = os.path.join(home, "Downloads", "slc.baseline")
+baseline_path = os.path.join(script_location, "slc.baseline")
 baseline_data = np.loadtxt(baseline_path)
 #Extract the By and Bz vectors, respectively, and reshape them
 #into column vectors
