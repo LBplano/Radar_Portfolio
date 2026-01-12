@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 import os
-from pathlib import Path
 
 # These are the parameters given for the radar data.
 
