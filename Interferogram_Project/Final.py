@@ -13,7 +13,7 @@ filename2 = os.path.join(script_location, "slc2.dat")
 
 # Assume data type is np.complex64. If the code gives good 
 # images, then this assumption is correct.
-raw_data1 = np.fromfile(filename1, dtype=np.complex64)
+raw_data1 = np.fromfile(filename1, dtype= np.complex64)
 slc1 = raw_data1.reshape((lines, width))
 raw_data2 = np.fromfile(filename2, dtype = np.complex64)
 slc2 = raw_data2.reshape((lines, width))
